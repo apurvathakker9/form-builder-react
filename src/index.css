@@ -1,0 +1,48 @@
+body {
+  background-color: white;
+}
+
+.sidebar {
+  max-height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  border-radius: 4px;
+  padding: 20px !important;
+}
+
+.button-form {
+  border-radius: 2px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  padding-bottom: 20px;
+}
+
+.main-form-title {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 24px;
+  letter-spacing: 1px;
+  display: block;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-family: poppins,sans-serif;
+  color: #1f1f1f;
+}
+
+.main-form-subtitle {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 24px;
+  letter-spacing: 1px;
+  display: block;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-family: poppins,sans-serif;
+  color: #1f1f1f;
+}

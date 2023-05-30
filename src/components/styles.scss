@@ -1,0 +1,17 @@
+.created-form-layout, .new-form-layout{
+  max-width: 150px;
+  border-radius: 9px;
+  div{
+    transition: background-color 0.4s ease;
+
+    &:hover{
+      background-color: rgba(235, 227, 227, 0.5);
+      border-radius: 9px;
+    }
+
+    &:active{
+      background-color: rgba(0,0,0,0.1);
+      border-radius: 9px;
+    }
+  } 
+}

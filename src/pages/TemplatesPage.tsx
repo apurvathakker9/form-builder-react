@@ -5,7 +5,9 @@ interface TemplatesPageProps {}
 const TemplatesPage: FunctionComponent<TemplatesPageProps> = () => {
   return (
     <>
-      <h1>All Templates</h1>
+      <div className="container">
+        <h1>All Templates</h1>
+      </div>
     </>
   );
 };
