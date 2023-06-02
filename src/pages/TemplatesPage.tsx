@@ -6,7 +6,9 @@ const TemplatesPage: FunctionComponent<TemplatesPageProps> = () => {
   return (
     <>
       <div className="container">
-        <h1>All Templates</h1>
+        <div className="row">
+          
+        </div>
       </div>
     </>
   );

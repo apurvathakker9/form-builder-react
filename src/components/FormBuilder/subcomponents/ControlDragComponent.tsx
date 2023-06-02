@@ -37,7 +37,7 @@ const ControlDragComponent: FunctionComponent<ControlDragComponentProps> = (
       isDragging: monitor.isDragging(),
       handlerId: monitor.getHandlerId(),
     }),
-  }),[props.formLayoutComponents]);
+  }),[props.formLayoutComponents]); // Need to add this dependency for dragging elements.
   const opacity = isDragging ? 0.4 : 1;
 
   return (
