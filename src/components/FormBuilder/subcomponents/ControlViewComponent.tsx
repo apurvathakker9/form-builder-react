@@ -39,8 +39,7 @@ const renderItem = (item: FormLayoutComponentChildrenType)=>{
        <div className='m-t-20 p-l-0'>
         <FormControlLabel
           control={<Checkbox
-            // TODO: fix te label here
-            // label={item.labelName + (item.required?" *":"")}  
+            disabled
           />}
           style={{marginLeft: '0px'}}
           label={item.placeholder}

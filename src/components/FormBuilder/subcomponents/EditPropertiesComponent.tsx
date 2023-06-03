@@ -5,6 +5,7 @@ import { Checkbox, FormControl, FormControlLabel, InputLabel, MenuItem, Select, 
 import { FormControlNames, FormItemTypes } from '../../../utils/formBuilderUtils';
 import { FormLayoutComponentsType } from '../../../types/FormTemplateTypes';
 import _ from "lodash";
+import useModalStrip from '../../../global-hooks/useModalStrip';
 
 const textboxStyle={
   minWidth: "100%",
@@ -36,6 +37,8 @@ const EditPropertiesComponent: FC<EditPropertiesComponentProps> = (props)=> {
 
   const [moveControlObj, setMoveControlObj] = useState<FormLayoutComponentChildrenType | null>(null);
   const [controlsInContainer, setControlsInContainer] = useState<number | undefined>(undefined);
+
+  const {showModalStrip} = useModalStrip();
 
   useEffect(()=>{
     if(selectedControl){
@@ -146,8 +149,7 @@ const EditPropertiesComponent: FC<EditPropertiesComponentProps> = (props)=> {
     e.preventDefault();
 
     if(!(moveControlObj as FormLayoutComponentChildrenType).containerId){
-      // TODO: Show moadal for error;
-      // props.showModal("danger","You need to select Step first",5000);
+      showModalStrip("danger","You need to select Step first",5000);
       return;
     }
     props.moveControlFromSide(selectedControl as FormLayoutComponentChildrenType,moveControlObj as FormLayoutComponentChildrenType);

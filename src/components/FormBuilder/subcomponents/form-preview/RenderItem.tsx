@@ -46,8 +46,6 @@ const RenderItem: FC<RenderItemProps> = (props)=> {
             <FormControlLabel
               control={
                 <Checkbox
-                // TODO: Fix the label for Checkbo
-                //label={item.labelName + (item.required ? " *" : "")}
                 />
               }
               style={{ marginLeft: "0px" }}

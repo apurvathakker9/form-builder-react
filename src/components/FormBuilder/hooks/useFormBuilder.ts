@@ -43,9 +43,8 @@ const useFormBuilder = (props: useFormBuilderProps) => {
       setFormLayoutComponents(newState);
     } else if (item.itemType === FormItemTypes.CONTROL) {
       const newState = formLayoutComponents.slice();
-      const formContainer = newState.filter((con, ind) => {
-        return con.container.id === containerId;
-      })[0];
+      const formContainerId = newState.findIndex((f)=>f.container.id === containerId)
+      const formContainer = {...newState[formContainerId]};
       const obj = { ...item as FormLayoutComponentChildrenType, id: generateID(), containerId: containerId };
 
       // Create a deep copy of items.
@@ -53,7 +52,10 @@ const useFormBuilder = (props: useFormBuilderProps) => {
       if (childItem.items) {
         obj.items = JSON.parse(JSON.stringify(childItem.items));
       }
-      formContainer.children.push(obj as FormLayoutComponentChildrenType);
+      const newChildren = formContainer.children.slice();
+      newChildren.push(obj as FormLayoutComponentChildrenType);
+      formContainer.children = newChildren;
+      newState[formContainerId] = formContainer;
       setFormLayoutComponents(newState);
     }
   };
