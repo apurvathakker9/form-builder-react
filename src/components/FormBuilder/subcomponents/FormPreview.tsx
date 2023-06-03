@@ -34,7 +34,7 @@ class FormPreview extends Component<FormPreviewProps, FormPreviewStates> {
     return (
       <>
         <Drawer open={showPreview} anchor="right">
-          <div style={{ minWidth: "70vw", backgroundColor: "#f8f9fa", height: "100vh" }}>
+          <div style={{ minWidth: "30vw", backgroundColor: "#f8f9fa", height: "100vh" }}>
             <div className="container">
               <div className="p-20">
                 <div className="d-flex align-items-center">

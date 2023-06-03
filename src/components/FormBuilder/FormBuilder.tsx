@@ -18,6 +18,7 @@ import FormPreview from './subcomponents/FormPreview';
 import { FormLayoutComponentChildrenType, FormLayoutComponentContainerType, FormLayoutComponentsType, TemplateType } from "../../types/FormTemplateTypes";
 import { generateID } from "../../utils/common";
 import ControlDragComponent from "./subcomponents/ControlDragComponent";
+import { useNavigate } from "react-router-dom";
 
 let isMobile: boolean;
 if (process.env.NODE_ENV === "localhost") {
@@ -66,6 +67,8 @@ const FormBuilder: FunctionComponent<FormBuilderProps> = (props) => {
 
   const {classes} = useStyles();
 
+  const navigate = useNavigate();
+
   return (
     <>
       {!isMobile ? (
@@ -91,7 +94,7 @@ const FormBuilder: FunctionComponent<FormBuilderProps> = (props) => {
                           <div className="action-buttons d-flex">
                             <Button
                               onClick={() => {
-                                // TODO: Redirect Logic
+                                navigate('/');
                               }}
                               className="mx-2"
                             >

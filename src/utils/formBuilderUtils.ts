@@ -28,26 +28,9 @@ export const FormItemTypes = {
   CONTAINER: "container",
 };
 
-export const AllWorkflowsSidebarDisplayTypes = {
-  CREATETEMPLATE: "createTemplate",
-  EDITTEMPLATE: "editTemplate",
-  CREATERULE: "createRule",
-  EDITRULE: "editRule",
-};
-
-export const AllWorkflowsPageView = {
-  WORKFLOWRULES: "workflow-rules",
-  WORKFLOWTEMPLATES: "workflow-templates",
-};
-
-export const WorkflowTemplatePublishStatus = {
+export const FormPublishStatus = {
   DRAFT: "draft",
   PUBLISHED: "published",
-};
-
-export const WorkflowRuleStatus = {
-  ACTIVE: "active",
-  NON_ACTIVE: "non-active",
 };
 
 export const FormContainerList = [

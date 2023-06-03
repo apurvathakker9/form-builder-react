@@ -13,7 +13,7 @@ const routes: RouteObject[] = [
     errorElement: <Error404 />,
     children: [
       {
-        path: "formbuilder/:formbuilder",
+        path: "formbuilder/:formId",
         element: <FormBuilderPage />,
       },
       {

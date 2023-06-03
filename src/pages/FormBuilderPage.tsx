@@ -1,37 +1,43 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useEffect } from "react";
 import FormBuilder from "../components/FormBuilder/FormBuilder";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { useParams } from "react-router-dom";
+import { getSingleTemplate, setSelectedTemplateNull } from "../redux/entities/formBuildeeEntity";
 
 interface FormBuilderPageProps {}
 
 const FormBuilderPage: FunctionComponent<FormBuilderPageProps> = () => {
 
-  const templateDetails = {
-    id: '123',
-    formName: 'Test Form',
-    createdAt: 1234,
-    creator: 'Apurva',
-    // formLayoutComponents: [{
-    //   container: {
-    //     id: '176',
-    //     controlName: "step-container",
-    //     displayText: "Workflow Step",
-    //     itemType: "container",
-    //     icon: "fa fa-building",
-    //     heading: "Container Heading",
-    //     subHeading: "Container SubHeading",
-    //   },
-    //   children: []
-    // }],
+  const template = useAppSelector((state)=>state.entities.formBuilder.selectedTemplate);
+  const dispatch = useAppDispatch();
+  const { formId }= useParams();
+
+  useEffect(()=>{
+    dispatch(getSingleTemplate(formId as string));
+
+    return ()=>{
+      // Setting template to null when unmounting.
+      dispatch(setSelectedTemplateNull());
+    }
+  },[]);
+
+  const defaultForm = {
+    id: '0',
+    formName: '',
+    createdAt: 0,
+    creator: '',
     formLayoutComponents: [],
-    lastPublishedAt: 1234,
+    lastPublishedAt: 0,
     publishHistory: [],
     publishStatus: 'draft',
-    updatedAt: 18876
+    updatedAt: 0
   };
 
   return (
     <>
-      <FormBuilder template={templateDetails} />
+      {template ? (
+        <FormBuilder template={template ? template : defaultForm} />
+      ) : null}
     </>
   );
 };

@@ -34,7 +34,7 @@ const Navbar: FunctionComponent<NavbarProps> = (props) => {
               >
                 <img
                   src={logo}
-                  alt="Beans"
+                  alt="Form Builder"
                   style={
                     isMobile
                       ? { marginTop: "7px", display: "inline-block" }
