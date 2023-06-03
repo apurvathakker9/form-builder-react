@@ -8,7 +8,9 @@ This application is a drag & drop form builder built in React and bundled with W
 Key features of the app include:
 
 - Create a new Template
-- Edit Template by Dragging Dropping elements & changing their properties.
+- Add Elements to templates by Dragging & Dropping elements to the form area.
+- Sort Elements inside containers by Dragging & Dropping.
+- Click Containers/Elements to edit their properties.
 - Save & Publish changes
 - Preview Changes on how it will look on a mobile phone.
 
