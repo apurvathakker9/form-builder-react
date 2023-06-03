@@ -10,7 +10,7 @@ import { generateID } from "../../../utils/common";
 import { useAppDispatch } from "../../../redux/hooks";
 import { openModal } from "../../../redux/uireducers/modalstrip";
 import moment from "moment";
-import { saveTemplate } from "../../../redux/entities/formBuildeeEntity";
+import { saveTemplate } from "../../../redux/entities/formBuilderEntity";
 import useModalStrip from "../../../global-hooks/useModalStrip";
 
 

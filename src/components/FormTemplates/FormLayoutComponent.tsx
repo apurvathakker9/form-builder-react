@@ -6,7 +6,7 @@ import { FormPublishStatus } from "../../utils/formBuilderUtils";
 import { IconButton } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useAppDispatch } from "../../redux/hooks";
-import { deleteTemplate } from "../../redux/entities/formBuildeeEntity";
+import { deleteTemplate } from "../../redux/entities/formBuilderEntity";
 
 interface FormLayoutComponentProps {
   template?: TemplateType;

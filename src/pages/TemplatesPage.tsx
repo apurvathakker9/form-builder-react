@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { getAllTemplates } from "../redux/entities/formBuildeeEntity";
+import { getAllTemplates } from "../redux/entities/formBuilderEntity";
 import { useNavigate } from "react-router-dom";
 import NewFormDialogComponent from "../components/FormTemplates/NewFormDialogComponent";
 import FormLayoutComponent from "../components/FormTemplates/FormLayoutComponent";
@@ -12,8 +12,6 @@ const TemplatesPage: FunctionComponent<TemplatesPageProps> = () => {
     (state) => state.entities.formBuilder.allTemplates
   );
   const dispatch = useAppDispatch();
-
-  const navigate = useNavigate();
 
   const [openDialog, setOpenDialog] = useState<boolean>(false);
 
