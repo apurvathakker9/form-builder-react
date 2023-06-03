@@ -2,6 +2,10 @@ import React, { FC } from 'react'
 import { FormLayoutComponentChildrenType } from '../../../../types/FormTemplateTypes';
 import { FormControlNames } from '../../../../utils/formBuilderUtils';
 import { Checkbox, FormControl, FormControlLabel, FormGroup, MenuItem, Radio, RadioGroup, Select, Switch, TextField } from '@mui/material';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 
 const dateFormat = 'yyyy, MMM dd';
 
@@ -97,35 +101,22 @@ const RenderItem: FC<RenderItemProps> = (props)=> {
     case FormControlNames.DATEFIELD:
       return (
         <>
-          {/* TODO: Fix Date Render */}
-          {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
+          <LocalizationProvider dateAdapter={AdapterMoment}>
             <DatePicker
-              autoOk
-              variant="inline"
-              name="dateStr"
-              inputVariant="outlined"
-              format={dateFormat}
-              fullWidth={true}
-              animateYearScrolling
+              slotProps={{ textField: { fullWidth: true } }}
             />
-          </MuiPickersUtilsProvider> */}
+          </LocalizationProvider>
         </>
       );
 
     case FormControlNames.TIMEFIELD:
       return (
         <>
-          {/* TODO: Fix Time Render */}
-          {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
+          <LocalizationProvider dateAdapter={AdapterMoment}>
             <TimePicker
-              autoOk
-              variant="inline"
-              name="timeStr"
-              inputVariant="outlined"
-              fullWidth={true}
-              animateYearScrolling
+              slotProps={{ textField: { fullWidth: true } }}
             />
-          </MuiPickersUtilsProvider> */}
+          </LocalizationProvider>
         </>
       );
 

@@ -4,6 +4,10 @@ import type { Identifier } from 'dnd-core'
 import { FormLayoutComponentChildrenType } from '../../../types/FormTemplateTypes';
 import { FormControlNames, FormItemTypes } from '../../../utils/formBuilderUtils';
 import { Checkbox, FormControl, FormControlLabel, FormGroup, MenuItem, Radio, RadioGroup, Select, Switch, TextField } from '@mui/material';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 
 const selectedColor= 'var(--primary)';
 const nonSelectedColor= 'rgba(0,0,0,0.1)';
@@ -77,37 +81,28 @@ const renderItem = (item: FormLayoutComponentChildrenType)=>{
       </>
 
     case FormControlNames.DATEFIELD:
-      // TODO: Fix date input
-      return <>
-        {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
-          <DatePicker
-          autoOk
-          variant="inline"
-          name='dateStr'
-          inputVariant='outlined'
-          format={dateFormat}
-          disabled
-          fullWidth={true}
-          animateYearScrolling
-          />
-        </MuiPickersUtilsProvider> */}
-      </>
+      return (
+        <>
+          <LocalizationProvider dateAdapter={AdapterMoment}>
+            <DatePicker
+              slotProps={{ textField: { fullWidth: true } }}
+              disabled
+            />
+          </LocalizationProvider>
+        </>
+      );
 
-    // TODO: Fix time input
     case FormControlNames.TIMEFIELD:
-      return <>
-        {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
-          <TimePicker
-          autoOk
-          variant="inline"
-          name='timeStr'
-          inputVariant='outlined'
-          fullWidth={true}
-          disabled
-          animateYearScrolling
-          />
-        </MuiPickersUtilsProvider> */}
-      </>
+      return (
+        <>
+          <LocalizationProvider dateAdapter={AdapterMoment}>
+            <TimePicker
+              disabled
+              slotProps={{ textField: { fullWidth: true } }}
+            />
+          </LocalizationProvider>
+        </>
+      );
 
     case FormControlNames.FILEUPLOAD:
       return <>
